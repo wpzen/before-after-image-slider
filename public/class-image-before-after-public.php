@@ -135,20 +135,20 @@ class Image_Before_After_Public {
 		 * The default slider settings.
 		 */
 		$atts = shortcode_atts( array(
-			'offset'		=> '50',
+			'offset'			=> '50',
 			'orientation'	=> 'horizontal',
-			'before'		=> 'Before',  
-			'after'			=> 'After',
-			'overlay'		=> 'false',
-			'hover'			=> 'false',
-			'handle'		=> 'true',
-			'click'			=> 'false',
-			'img1'			=> '',
-			'img2'			=> ''
+			'before'			=> 'Before',
+			'after'				=> 'After',
+			'overlay'			=> 'false',
+			'hover'				=> 'false',
+			'handle'			=> 'true',
+			'click'				=> 'false',
+			'img1'				=> 0,
+			'img2'				=> 0
 		), $atts );
 
 		$block = '<div class="wp-block-image-before-after-block"';
-		
+
 		foreach ( $atts as $key => $value ) {
 			if( 'img1' != $key && 'img2' != $key )
 				$block .= sprintf( ' data-%s="%s"', $key, $value );
@@ -156,8 +156,17 @@ class Image_Before_After_Public {
 
 		$block .= '>';
 
-		$block .= '<img src="' . $atts['img1'] . '" class="image-before">';
-		$block .= '<img src="' . $atts['img2'] . '" class="image-after">';
+		$img1 = wp_get_attachment_image_src( (int)$atts['img1'], 'full' );
+
+		if( $img1 ) {
+			$block .= '<img src="' . $img1[0] . '" class="image-before">';
+		}
+
+		$img2 = wp_get_attachment_image_src( (int)$atts['img2'], 'full' );
+
+		if( $img2 ) {
+			$block .= '<img src="' . $img2[0] . '" class="image-before">';
+		}
 
 		$block .= '</div>';
 
