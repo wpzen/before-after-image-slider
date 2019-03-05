@@ -2,7 +2,7 @@
 	'use strict';
 
 	$(window).load(function() {
-		$(".wp-block-image-before-after-block").each( function() {
+		$(".wp-block-before-after-image-slider-block").each( function() {
 			var slider = $( this );
 			slider.twentytwenty( {
 				default_offset_pct: ( slider.data( "offset" ) / 100 ),
@@ -14,7 +14,7 @@
 			    move_with_handle_only: slider.data( "handle" ),
 			    click_to_move: slider.data( "click" )
 			} );
-		} );	
+		} );
 	});
 
 })( jQuery );

@@ -22,11 +22,11 @@
 	 * @return {?WPBlock}			The block, if it has been successfully
 	 *								registered; otherwise `undefined`.
 	 */
-	blocks.registerBlockType( 'image-before-after/block', {
-		title: __( 'Image before & after', 'image-before-after' ),
+	blocks.registerBlockType( 'before-after-image-slider/block', {
+		title: __( 'Before & After Image Slider', 'before-after-image-slider' ),
 		icon: 'image-flip-horizontal',
 		category: 'layout',
-		description: __( 'Highlight the differences between the two images.', 'image-before-after' ),
+		description: __( 'Highlight the differences between the two images.', 'before-after-image-slider' ),
 		attributes: {
 			mediaBeforeID: {
 				type: 'number'
@@ -72,11 +72,11 @@
 			},
 			beforeLabel: {
 				type: 'string',
-				default: __( 'Before', 'image-before-after' )
+				default: __( 'Before', 'before-after-image-slider' )
 			},
 			afterLabel: {
 				type: 'string',
-				default: __( 'After', 'image-before-after' )
+				default: __( 'After', 'before-after-image-slider' )
 			}
 		},
 
@@ -102,10 +102,10 @@
 
 				createElement( InspectorControls, null,
 					createElement( PanelBody, {
-							title: __( 'Options', 'image-before-after' )
+							title: __( 'Options', 'before-after-image-slider' )
 						},
 						createElement( RangeControl, {
-								label: __( 'Default offset pct', 'image-before-after' ),
+								label: __( 'Default offset pct', 'before-after-image-slider' ),
 								value: attributes.offset,
 								min: 0,
     							max: 100,
@@ -114,11 +114,11 @@
     									offset: value
     								} )
     							},
-    							help: __( 'How much of the before image is visible when the page loads', 'image-before-after' )
+    							help: __( 'How much of the before image is visible when the page loads', 'before-after-image-slider' )
 							}
 						),
 						createElement( SelectControl, {
-								label: __( 'Orientation', 'image-before-after' ),
+								label: __( 'Orientation', 'before-after-image-slider' ),
 								value: attributes.orientation,
 								options: [ {
 									label: 'Vertical',
@@ -132,73 +132,73 @@
 						        		orientation: value
 						        	} )
 						        },
-						        help: __( 'Orientation of the before and after images', 'image-before-after' )
+						        help: __( 'Orientation of the before and after images', 'before-after-image-slider' )
 							}
 						),
 						createElement( TextControl, {
-								label: __( 'Before label', 'image-before-after' ),
+								label: __( 'Before label', 'before-after-image-slider' ),
 								value: attributes.beforeLabel,
     							onChange: function( value ) {
     								props.setAttributes( {
     									beforeLabel: value
     								} )
     							},
-    							help: __( 'Set a custom before label', 'image-before-after' )
+    							help: __( 'Set a custom before label', 'before-after-image-slider' )
 							}
 						),
 						createElement( TextControl, {
-								label: __( 'After label', 'image-before-after' ),
+								label: __( 'After label', 'before-after-image-slider' ),
 								value: attributes.afterLabel,
     							onChange: function( value ) {
     								props.setAttributes( {
     									afterLabel: value
     								} )
     							},
-    							help: __( 'Set a custom after label', 'image-before-after' )
+    							help: __( 'Set a custom after label', 'before-after-image-slider' )
 							}
 						),
 						createElement( ToggleControl, {
-								label: __( 'No overlay', 'image-before-after' ),
+								label: __( 'No overlay', 'before-after-image-slider' ),
 								checked: attributes.overlay,
 								onChange: function( value ) {
 									props.setAttributes( {
 										overlay: value
 									} )
 								},
-								help: __( 'Do not show the overlay with before and after', 'image-before-after' )
+								help: __( 'Do not show the overlay with before and after', 'before-after-image-slider' )
 							}
 						),
 						createElement( ToggleControl, {
-								label: __( 'Move slider on hover', 'image-before-after' ),
+								label: __( 'Move slider on hover', 'before-after-image-slider' ),
 								checked: attributes.moveSliderOnHover,
 								onChange: function( value ) {
 									props.setAttributes( {
 										moveSliderOnHover: value
 									} )
 								},
-								help: __( 'Move slider on mouse hover?', 'image-before-after' )
+								help: __( 'Move slider on mouse hover?', 'before-after-image-slider' )
 							}
 						),
 						createElement( ToggleControl, {
-								label: __( 'Move with handle only', 'image-before-after' ),
+								label: __( 'Move with handle only', 'before-after-image-slider' ),
 								checked: attributes.moveWithHandleOnly,
 								onChange: function( value ) {
 									props.setAttributes( {
 										moveWithHandleOnly: value
 									} )
 								},
-								help: __( 'Allow a user to swipe anywhere on the image to control slider movement.', 'image-before-after' )
+								help: __( 'Allow a user to swipe anywhere on the image to control slider movement.', 'before-after-image-slider' )
 							}
 						),
 						createElement( ToggleControl, {
-								label: __( 'Click to move', 'image-before-after' ),
+								label: __( 'Click to move', 'before-after-image-slider' ),
 								checked: attributes.clickToMove,
 								onChange: function( value ) {
 									props.setAttributes( {
 										clickToMove: value
 									} )
 								},
-								help: __( 'Allow a user to click (or tap) anywhere on the image to move the slider to that location.', 'image-before-after' )
+								help: __( 'Allow a user to click (or tap) anywhere on the image to move the slider to that location.', 'before-after-image-slider' )
 							}
 						),
 					),
@@ -237,7 +237,7 @@
 										className: attributes.mediaBeforeID ? 'image-button' : 'button button-large',
 										onClick: obj.open
 									},
-									! attributes.mediaBeforeID ? __( 'Upload Image Before', 'image-before-after' ) : createElement( 'img', { src: attributes.mediaBeforeURL } )
+									! attributes.mediaBeforeID ? __( 'Upload Image Before', 'before-after-image-slider' ) : createElement( 'img', { src: attributes.mediaBeforeURL } )
 								);
 							}
 						} ),
@@ -254,7 +254,7 @@
 										className: attributes.mediaAfterID ? 'image-button' : 'button button-large',
 										onClick: obj.open
 									},
-									! attributes.mediaAfterID ? __( 'Upload Image After', 'image-before-after' ) : createElement( 'img', { src: attributes.mediaAfterURL } )
+									! attributes.mediaAfterID ? __( 'Upload Image After', 'before-after-image-slider' ) : createElement( 'img', { src: attributes.mediaAfterURL } )
 								);
 							}
 						} )
@@ -278,7 +278,7 @@
 					'data-hover'		: attributes.moveSliderOnHover,
 					'data-handle'		: attributes.moveWithHandleOnly,
 					'data-click'		: attributes.clickToMove
-					
+
 				},
 				attributes.mediaBeforeURL &&
 					createElement( 'img', {
@@ -292,7 +292,7 @@
 							src: attributes.mediaAfterURL
 						}
 					),
-					
+
 			);
 		},
 	} );

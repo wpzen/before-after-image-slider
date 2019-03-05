@@ -2,8 +2,8 @@
  * Note that these styles are loaded *before* editor styles, so that
  * editor-specific styles using the same selectors will take precedence.
  */
-.wp-block-image-before-after-block .image-button-before,
-.wp-block-image-before-after-block .image-button-after {
+.wp-block-before-after-image-slider-block .image-button-before,
+.wp-block-before-after-image-slider-block .image-button-after {
 	background: #f1f1f1;
 	width: 48.5%;
 	text-align: center;
@@ -11,31 +11,32 @@
 	padding: 0;
 }
 
-.wp-block-image-before-after-block .image-button-before {
+.wp-block-before-after-image-slider-block .image-button-before {
 	float: left;
 }
 
-.wp-block-image-before-after-block .image-button-after {
+.wp-block-before-after-image-slider-block .image-button-after {
 	float: right;
 }
 
-.wp-block-image-before-after-block .image-button {
+.wp-block-before-after-image-slider-block .image-button {
 	padding: 0;
 	display: block;
 }
 
-.wp-block-image-before-after-block button.button {
+.wp-block-before-after-image-slider-block button.button {
 	margin: 50px 0;
 }
 
-.wp-block-image-before-after-block img {
+.wp-block-before-after-image-slider-block img {
+	width: 100%;
 	display: block;
 	z-index: 1;
 	position: relative;
 }
 
-.wp-block-image-before-after-block:after { 
-	content: ""; 
-	clear: both; 
-	display: table; 
+.wp-block-before-after-image-slider-block:after {
+	content: "";
+	clear: both;
+	display: table;
 }

@@ -9,8 +9,8 @@
  * @link       https://wpzen.ru
  * @since      1.0.0
  *
- * @package    Image_Before_After
- * @subpackage Image_Before_After/includes
+ * @package    Before_After_Image_Slider
+ * @subpackage Before_After_Image_Slider/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Image_Before_After
- * @subpackage Image_Before_After/includes
+ * @package    Before_After_Image_Slider
+ * @subpackage Before_After_Image_Slider/includes
  * @author     Pleshakov Valery <pleshakov.valery@gmail.com>
  */
-class Image_Before_After_i18n {
+class Before_After_Image_Slider_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Image_Before_After_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'image-before-after',
+			'before-after-image-slider',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

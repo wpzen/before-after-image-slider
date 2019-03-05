@@ -6,8 +6,8 @@
  * @link       https://wpzen.ru
  * @since      1.0.0
  *
- * @package    Image_Before_After
- * @subpackage Image_Before_After/public
+ * @package    Before_After_Image_Slider
+ * @subpackage Before_After_Image_Slider/public
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Image_Before_After
- * @subpackage Image_Before_After/public
+ * @package    Before_After_Image_Slider
+ * @subpackage Before_After_Image_Slider/public
  * @author     Pleshakov Valery <pleshakov.valery@gmail.com>
  */
-class Image_Before_After_Public {
+class Before_After_Image_Slider_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -52,7 +52,7 @@ class Image_Before_After_Public {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
-		add_shortcode( 'image_before_after', array( $this, 'register_shortcode' ) );
+		add_shortcode( 'before_after_image_slider', array( $this, 'register_shortcode' ) );
 
 	}
 
@@ -67,10 +67,10 @@ class Image_Before_After_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Image_Before_After_Loader as all of the hooks are defined
+		 * defined in Before_After_Image_Slider_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Image_Before_After_Loader will then create the relationship
+		 * The Before_After_Image_Slider_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -90,10 +90,10 @@ class Image_Before_After_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Image_Before_After_Loader as all of the hooks are defined
+		 * defined in Before_After_Image_Slider_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Image_Before_After_Loader will then create the relationship
+		 * The Before_After_Image_Slider_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -116,7 +116,7 @@ class Image_Before_After_Public {
 
 		wp_enqueue_script(
 			$this->plugin_name,
-			plugin_dir_url( __FILE__ ) . 'js/image-before-after-public.js',
+			plugin_dir_url( __FILE__ ) . 'js/before-after-image-slider-public.js',
 			array( 'jquery', 'jquery-event-move', 'jquery-twentytwenty' ),
 			$this->version,
 			false
@@ -125,7 +125,7 @@ class Image_Before_After_Public {
 	}
 
 	/**
-	 * Add shortcode image before and after.
+	 * Add shortcode before and after.
 	 *
 	 * @since    1.0.0
 	 */
@@ -147,7 +147,7 @@ class Image_Before_After_Public {
 			'img2'				=> 0
 		), $atts );
 
-		$block = '<div class="wp-block-image-before-after-block"';
+		$block = '<div class="wp-block-before-after-image-slider-block"';
 
 		foreach ( $atts as $key => $value ) {
 			if( 'img1' != $key && 'img2' != $key )

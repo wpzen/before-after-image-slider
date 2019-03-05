@@ -10,10 +10,10 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Load all translations for our plugin from the MO file.
  */
-function image_before_after_load_textdomain() {
-	load_plugin_textdomain( 'image-before-after', false, basename( __DIR__ ) . '/languages' );
+function before_after_image_slider_load_textdomain() {
+	load_plugin_textdomain( 'before-after-image-slider', false, basename( __DIR__ ) . '/languages' );
 }
-add_action( 'init', 'image_before_after_load_textdomain' );
+add_action( 'init', 'before_after_image_slider_load_textdomain' );
 
 /**
  * Registers all block assets so that they can be enqueued through Gutenberg in
@@ -21,7 +21,7 @@ add_action( 'init', 'image_before_after_load_textdomain' );
  *
  * Passes translations to JavaScript.
  */
-function image_before_after_register_block() {
+function before_after_image_slider_register_block() {
 
 	if ( ! function_exists( 'register_block_type' ) ) {
 		// Gutenberg is not active.
@@ -29,22 +29,22 @@ function image_before_after_register_block() {
 	}
 
 	wp_register_script(
-		'image-before-after-block',
+		'before-after-image-slider-block',
 		plugins_url( 'block.js', __FILE__ ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor', 'wp-components' ),
 		filemtime( plugin_dir_path( __FILE__ ) . 'block.js' )
 	);
 
 	wp_register_style(
-		'image-before-after-block',
+		'before-after-image-slider-block',
 		plugins_url( 'style.css', __FILE__ ),
 		array( ),
 		filemtime( plugin_dir_path( __FILE__ ) . 'style.css' )
 	);
 
-	register_block_type( 'image-before-after/block', array(
-		'style'			=> 'image-before-after-block',
-		'editor_script' => 'image-before-after-block',
+	register_block_type( 'before-after-image-slider/block', array(
+		'style'			=> 'before-after-image-slider-block',
+		'editor_script' => 'before-after-image-slider-block',
 	) );
 
   if ( function_exists( 'wp_set_script_translations' ) ) {
@@ -53,8 +53,8 @@ function image_before_after_register_block() {
      * plugin_dir_path( MY_PLUGIN ) . 'languages' ) ). For details see
      * https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
      */
-    wp_set_script_translations( 'image-before-after-block', 'image-before-after' );
+    wp_set_script_translations( 'before-after-image-slider-block', 'before-after-image-slider' );
   }
 
 }
-add_action( 'init', 'image_before_after_register_block' );
+add_action( 'init', 'before_after_image_slider_register_block' );
