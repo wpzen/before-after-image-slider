@@ -1,4 +1,4 @@
-# Gutenberg image block before & after
+# Before & After Image Slider – Gutenberg Block
 WordPress plugin to highlight the differences between two images. **Support editor Gutenberg.**
 
 Based on jQuery TwentyTwenty, a widget that is:
@@ -7,9 +7,9 @@ Based on jQuery TwentyTwenty, a widget that is:
 * Doesn't require images to work
 * Works with Foundation out of the box
 ## Demo
-* See [this blog post](https://wpzen.ru/portfolio/image-before-after/) for screenshots
+* See [this blog post](https://wpzen.ru/plugins/before-after-image-slider/) for screenshots
 ## Setup
-* [WPZen - Setup Gutenberg image block before & after](https://wpzen.ru/portfolio/image-before-after/)
+* [WPZen - Setup Before & After Image Slider](https://wpzen.ru/plugins/before-after-image-slider/)
 ## Changelog
 ### 1.0.0
 * Initial Release
